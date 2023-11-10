@@ -1,0 +1,14 @@
+{
+  "name": "namastey-react",
+  "version": "1.0.0",
+  "description": "This is React",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Ritik Chaudhary",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.10.2"
+  }
+}
