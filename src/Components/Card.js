@@ -5,16 +5,18 @@ const Card = (props)=>{
     const {resData} = props;
     const {name, cuisines, avgRating, costForTwo} = resData?.info;
     return (
-        <div className="card">
-            <img 
-                className="image"
+        <div className="m-4 p-4 w-[225px] bg-white rounded-lg hover:shadow-xl">
+            <img
+                className="w-60 h-48 mb-4 rounded-lg"
                 alt = "image"
                 src={IMG_URL + resData.info.cloudinaryImageId}
             />
-            <h2 className="h2tag">{name}</h2>
-            <h5 className="h5tag">{cuisines.join(", ")}</h5>
-            <h5 className="h5tag" >{avgRating}</h5>
-            <h5 className="h5tag">{costForTwo}</h5>
+            <div className="ml-3">
+                <h2 className="mb-2 font-bold whitespace-nowrap overflow-hidden text-ellipsis">{name}</h2>
+                <h5 className="mb-2 whitespace-nowrap overflow-hidden text-ellipsis">{cuisines.join(", ")}</h5>
+                <h5 className="mb-2">{avgRating}⭐</h5>
+                <h5 className="mb-2">{costForTwo}</h5>
+            </div>
         </div>
     );
 };
