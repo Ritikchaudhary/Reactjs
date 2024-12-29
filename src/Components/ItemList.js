@@ -1,13 +1,23 @@
 import {IMG_URL} from "../Utils/constants"
 import {useDispatch} from "react-redux"
-import {addItem} from "../Utils/cartSlice"
+import {addItem, removeItem} from "../Utils/cartSlice"
+import {useSelector} from "react-redux"
 
 const ItemList = ({items}) => {
+
+    const cartItems = useSelector((store) => store.cart.items);
+
+    const IsItemPresent = (item)=> cartItems.some((cartItem)=>cartItem?.card?.info?.id === item?.card?.info?.id);
 
     const dispatch = useDispatch();
 
     const handleClick = (item)=>{
-        dispatch(addItem(item));
+        if(IsItemPresent(item)){
+            dispatch(removeItem({id: item?.card?.info?.id}));
+        }
+        else{
+            dispatch(addItem(item));
+        } 
     }
 
     return (
@@ -24,7 +34,7 @@ const ItemList = ({items}) => {
 
                     <div className="w-3/12 p-3">
                         <div className="absolute mx-11 mt-28">
-                            <button onClick={()=>handleClick(item)} className="rounded-lg px-3 py-1 bg-black text-white">Add</button>
+                            <button onClick={()=>handleClick(item)} className="rounded-lg px-3 py-1 bg-black text-white">{IsItemPresent(item) ? "Remove" : "Add"}</button>
                         </div>
                         <img className="rounded-lg w-40 h-32" src={IMG_URL + item?.card?.info?.imageId}></img>
                     </div>

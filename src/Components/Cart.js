@@ -19,9 +19,11 @@ const Cart = ()=>{
                 <ItemList items={cartItems}/>
             </div>
             <div className="text-center w-6/12 m-auto p-8">
-                <button onClick={handleClearCart} className="text-white bg-black rounded-lg p-1 px-2">
-                    Clear Cart
+            {
+               cartItems.length!==0 && <button onClick={handleClearCart} className="text-white bg-black rounded-lg p-1 px-2">
+                Clear Cart
                 </button>
+            }
             </div>
         </div>
     );
