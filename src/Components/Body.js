@@ -26,7 +26,7 @@ if(status === false)
     return (
 
         <div className="body">
-            <div className="flex items-center ml-28">
+            <div className="lg:flex lg:items-center lg:ml-28">
                 <div className="m-4 p-4">
                     <input className="border border-solid border-black mr-6 pl-1 rounded-lg" value={searchText} onChange={(e)=>{
                         setSearchText(e.target.value);
