@@ -2,11 +2,12 @@
   "name": "namastey-react",
   "version": "1.0.0",
   "description": "This is React",
-  "main": "App.js",
+  "homepage": "https://ritikchaudhary.github.io/Reactjs",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Ritik Chaudhary",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "buffer": "^6.0.3",
     "crypto-browserify": "^3.12.0",
     "events": "^3.3.0",
+    "gh-pages": "^6.2.0",
     "https-browserify": "^1.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
